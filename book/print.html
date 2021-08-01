@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 第1章 自由場</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="第1章-自由場"><a class="header" href="#第1章-自由場">第1章 自由場</a></h1>
+<h2 id="11-はじめに"><a class="header" href="#11-はじめに">1.1 はじめに</a></h2>
+<p>物理の理論は、実験の結果を実験する前に計算で出す方法を示すものである。<br />
+ここで、次の2つが重要になると考えられる。</p>
+<p>・その理論はなぜ正しいと言えるのか。<br />
+・具体的にどのように計算するのか。</p>
+<p>前者は、計算方法の解釈の問題にもなる。<br />
+「理由が完全に明確であるわけではないが、こう計算すると答がでる。
+そして、その計算結果が実験と一致する」ということがあるのである。<br />
+実際のところ、「ということがある」というより、「ここにこそ、物理学の重大な問題がある」と
+言うこともできるだろう。</p>
+<p>この文章は、「なるべくはやく計算方法（の流れ）を知る」ためのものとしたい。<br />
+そのため、教科書で初めに書いてあるようなことを省略することもある。
+また、多くの物理学者が正しいと考えているであろう解釈を、なるべく論評抜きで述べることにする。
+しかし、物理の理論は完成したものではないため、それが絶対に正しいとは言えない。
+したがって、どの解釈も、語尾に「このように解釈される。と多くの物理学者が考えている。と著者は思っている。しかし、どこかのステップで間違っている可能性はある」が省略されていると考えてほしい。</p>
+<p>はじめに「実験結果を出す計算方法」と書いたが、本当の実験の結果を出すまでの計算方法を示すことはできない。「理論上の実験」レベルの話である。具体的には、散乱振幅（後述）の基本的な計算方法を示すということになる。</p>
+<p>なお、この文章は予告なく変更することがあります。</p>
+<h2 id="12-場の理論"><a class="header" href="#12-場の理論">1.2 場の理論</a></h2>
+<p>素粒子は、4次元時空の中で生成し、また消滅する。<br />
+これを説明するのが場の理論である。素粒子が生成消滅する性質をもった時空を「場」とよんでいるのである。</p>
+<p>ここで、これから必要になる特殊相対性理論の内容を簡単に見ておく。<br />
+4次元時空の座標は \((x^0, x^1, x^2, x^3)\) のように4つの実数で表される。\(x^0\) が時間である。
+エネルギーと運動量は、\((E, p^1, p^2, p^3)\) のようにまとめられて4次元運動量となる。したがって、\(E\) を \(p^0\) とも書く。<br />
+4次元の座標も運動量も4成分だが、多くの場合、1文字にまとめて \(x , p \) のようにあらわす。
+4次元の内積も3次元のときと同様に「\(\cdot\)」であらわす。たとえば、\(x \cdot p\) は </p>
+<p>　　\(x^0p^0 - x^1p^1 - x^2p^2 - x^3p^3\) = \(x^0p^0 - \mathbf{x}\cdot\mathbf{p}\)</p>
+<p>のことである。ただし、太字は3次元のベクトルを表し、その内積は通常のものである。<br />
+質量 \(m\) の独立した粒子では、\(p \cdot p = E^2 - \mathbf{p}\cdot\mathbf{p} = m^2 \) が成り立つ。これは </p>
+<p>　　\(E = \sqrt{\mathbf{p}\cdot\mathbf{p} + m^2}\)</p>
+<p>ということである。</p>
+<p>場の理論に戻ろう。<br />
+点 \(x\) に粒子を生成する演算子 \(\phi(x)\) があって、物理現象は、\(\phi(x)\) が真空 \(|0&gt;\) に作用することで起こると考える。
+この \(\phi(x)\) が「場を表す演算子」=「場の演算子」である。（実際には、光子の場の演算子、クォークの場の演算子、、、など複数種類ある。）
+もちろん、真空に場の演算子がすでに作用している状態にさらに他の場の演算子が作用することもある。</p>
+<p>具体的には、「真空に作用する場の演算子」を定義し、それらの作用の結果を計算するのが、場の理論ということになる。場の演算子は、特定の素粒子を生成消滅させる場を表すということを再度注意しておく。したがって、しばしば「この素粒子は〇〇の性質をもつ」と「この場の演算子は〇〇の性質をもつ」、「この場は〇〇の性質をもつ」は同じ意味で使われることが多い。また、以下では、素粒子を単に粒子と書く。実際、素粒子でなくとも、場の理論は有効である。</p>
+<h2 id="13-自由ボソン場"><a class="header" href="#13-自由ボソン場">1.3 自由ボソン場</a></h2>
+<p>粒子はなんらかの相互作用をしているはずだが、最初は相互作用を一切しない粒子を考え、それを自由粒子、自由場の粒子、自由場などとよぶ。相互作用は、自由場からの「わずかなずれ」と考えるのである。<br />
+粒子はボソンとフェルミオンに分類され、自由なボソン場は</p>
+<p>　　\(\phi(\mathbf{x} , t) = \displaystyle{\int} \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}(a_{\mathbf{p}}e^{-ip\cdot x} + a_{\mathbf{p}}^{+}e^{ip\cdot x})\)</p>
+<p>と書かれる。ただし、\(p\) は4次元の運動量で、\(p^0 = E_{\mathbf{p}} = \sqrt{\mathbf{p}\cdot\mathbf{p} + m^2}\) とする。 
+また、\(a_{\mathbf{p}} , a_{\mathbf{p}}^{+}\) は</p>
+<p>　　\([a_{\mathbf{p}} , a_{\mathbf{p}'}^{+}] = (2\pi)^3\delta^{(3)}(\mathbf{p} - \mathbf{p}')\) </p>
+<p>をみたす演算子と考える。ここで、\([A , B] = AB - BA\) という意味である。<br />
+これらが真空 \(|0&gt;\) に作用するのである。<br />
+特に、</p>
+<p>　　\(a_{\mathbf{p}}|0&gt; = 0\)</p>
+<p>とする。</p>
+<p>　　\(a_{\mathbf{p}}^{+}|0&gt;\)</p>
+<p>はゼロではない。これは「運動量が \(\mathbf{p}\) の粒子が1つある状態」と解釈される。このような「状態」の前の係数は、重要な意味を持つが、「これは1粒子状態である」などという性質は、係数の大きさにはよらない。</p>
+<p>　　\(\phi(\mathbf{x} , t)|0&gt;\)</p>
+<p>では、\(a_{\mathbf{p}}\) の項はすべて消え、\(a_{\mathbf{p}}^{+}\) の項はすべて残る。これは、無数の運動量の状態の重ね合わさった状態と考えることができる。</p>
+<p>\(a_{\mathbf{p}}^{+}\) を真空に作用させると1粒子状態になるので、これを生成演算子とよび、1粒子状態に \(a_{\mathbf{p}}\) を作用させると真空に戻るので、これを消滅演算子とよぶ。<br />
+よって、たとえば、\(a_{\mathbf{p}}^{+}a_{\mathbf{p}'}^{+}|0&gt;\) は、「真空から2つの粒子（運動量が、\(\mathbf{p} , \mathbf{p}'\)）が生成された状態」「2粒子状態」と解釈される。より多くの粒子の状態も同様である。</p>
+<p>場の演算子は、運動方程式とよばれる方程式をみたす。自由ボソン場の運動方程式は Klein-Gorodn方程式とよばれる。<br />
+\(\frac{\partial}{\partial x^\mu}\) を \(\partial_\mu\) と書くと、Klein-Gordon方程式は次のように書ける。</p>
+<p>　　\((\partial\cdot\partial + m^2)\phi = 0\)</p>
+<p>上の \(\phi(\mathbf{x} , t)\) がKlein-Gordon方程式をみたすことは、微分して容易に示すことができる。<br />
+自由ボソン場はこの式で特徴づけられるので、Klein-Gordon場ともいう。</p>
+<p>「自由ボソン場は、なぜKlein-Gordon方程式をみたすと考えられるのか」はここでは述べない。（多くの教科書では最小作用の原理から導出する。）ただ、次の事実を指摘しておく。<br />
+量子力学（粒子の生成消滅までは考えない理論）は、その適用範囲内で大きな成果を得た。量子力学では粒子は波動方程式をみたす波動関数であらわされる。<br />
+波動方程式は、非相対論的なエネルギーの式 \(E = \frac{1}{2 m} p^2 + U\) で、\(E , p^1 , p^2 , p^3\) を \(i \frac{\partial}{\partial t} , -i \frac{\partial}{\partial p^1} , -i \frac{\partial}{\partial p^2} , -i \frac{\partial}{\partial p^3}\) に置き換えて得られるものだった。
+Klein-Gordon方程式は、その対応を相対論的なエネルギーの式 \(p \cdot p = m^2 \) にあてはめたものである。</p>
+<h2 id="14-確率振幅"><a class="header" href="#14-確率振幅">1.4 確率振幅</a></h2>
+<p>粒子の状態は「多くの状態の重ね合わせ」であることが多い。「多くの状態が重ね合わさった状態」というのは、「そのなかの状態たちのどれにも実現される可能性がありながら、そのどれも実現されていない状態」のことである。このような「重ね合わさった状態」を観測すると、どれかの状態が実現されるのであるが、「含まれている割合が大きいもの」ほど実現される可能性が高いことになる。</p>
+<p>たとえば、状態 \(|X&gt;\) が</p>
+<p>　　\(|X&gt; = m a_{\mathbf{p}}^{+}|0&gt; + \cdots\)</p>
+<p>のように展開されるとき、\(a_{\mathbf{p}}^{+}|0&gt;\) の実現確率は \(m\) の絶対値の二乗に比例するのである。<br />
+「どうしてそうなるのか？」に明快に答えられる人はいないと思う。ただ、これまでの物理学の発展の中でそう考えられるようになり、実際、実験によって確かめられている事実なのである。この \(m\) のようなものを確率振幅という。</p>
+<p>確率振幅をうまく計算する方法として、</p>
+<p>　　\(&lt;0|\)</p>
+<p>を定義する。
+これは</p>
+<p>　　\(&lt;0|0&gt; = 1\)<br />
+　　\(&lt;0|a_{\mathbf{p}}^{+} = 0\)</p>
+<p>となるものとする。</p>
+<p>そうすると、\(&lt;0|a_{\mathbf{p}'}a_{\mathbf{p}}^{+}|0&gt; = (2\pi)^3\delta^{(3)}(\mathbf{p}' - \mathbf{p})\) より、\(&lt;0|a_{\mathbf{p}'}|X&gt;\) を計算すれば \(m\) がわかることになる。</p>
+<p>ここで、後の議論で重要になる伝搬関数を紹介する。<br />
+\(&lt;0|\phi(x)\phi(y)|0&gt;\) は計算すると、\(x - y\) にのみ依存することがわかる。これを \(D(x - y)\) と書く。</p>
+<p>　　\(D(x - y) = &lt;0|\phi(x)\phi(y)|0&gt; = \displaystyle{\int} \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\mathbf{p}}}e^{-ip\cdot(x - y)}\)</p>
+<p>これまでの解釈によれば、\(D(x - y)\) は、「点 x で生成された粒子が点 y まで伝搬する確率振幅」を表すものとなりそうである。しかし、残念ながら、点 \(x\) と \(y\) が十分離れていても 0 でない値をもってしまうため、光速以上の速さで粒子が移動することを意味することになる。すなわち、その解釈は誤りである。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+    </body>
+</html>
