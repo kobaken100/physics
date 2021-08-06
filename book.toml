@@ -1,5 +1,5 @@
 [book]
-authors = []
+author = "Ken Kobayashi"
 language = "ja"
 multilingual = false
 src = "src"

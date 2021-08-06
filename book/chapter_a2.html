@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title></title>
-        <base href="/">
+        <title>App2 量子力学での摂動</title>
         <!-- Custom HTML head -->
         
 
@@ -80,7 +79,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 第1章 自由場</a></li><li class="chapter-item expanded "><a href="chapter_a2.html"><strong aria-hidden="true">2.</strong> App2 量子力学での摂動</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 第1章 自由場</a></li><li class="chapter-item expanded "><a href="chapter_a2.html" class="active"><strong aria-hidden="true">2.</strong> App2 量子力学での摂動</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,19 +139,50 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="appendix2-量子力学での摂動"><a class="header" href="#appendix2-量子力学での摂動">Appendix2 量子力学での摂動</a></h1>
+<p>波動関数が正確にわかっているハミルトニアン \(H_0\) に摂動 \(V\) が加わったときを考える。すなわち</p>
+<p>　　\(H_0 \phi^0_n = E^0_n \phi^0_n\)</p>
+<p>とし、</p>
+<p>　　\((H_0 + V)\phi = E\phi\)</p>
+<p>を考える。<br />
+ここで、</p>
+<p>　　\(\phi = \Sigma c_m\phi^0_m\)</p>
+<p>とおいて、上の式に代入すると、</p>
+<p>　　\(\Sigma c_m(E^0_m + V)\phi^0_m = \Sigma E \phi^0_m\)</p>
+<p>となり、\(\phi^{0*}_k\) を掛けて積分すると次が得られる。</p>
+<p>　　\((E - E^0_k)c_k = \Sigma V_{kl}c_m\)</p>
+<p>ただし、</p>
+<p>　　\(V_{km} = \displaystyle{\int} \phi^{0*}_kV\phi^0_m dq\)</p>
+<p>とした。</p>
+<p>　　\(E = E^0 + E^1 + E^2 + \dots\)<br />
+　　\(c = c^0 + c^1 + c^2 + \dots , \)</p>
+<p>を</p>
+<p>　　\(c^0_n = 1 , c^0_m = 0 (m ≠ n)\)</p>
+<p>としして順に求めていくと、まず、</p>
+<p>　　\(E^1 = V_{nn}\)</p>
+<p>が得られる。
+これを代入して、\(c^1_m\) を求めると</p>
+<p>　　\(c^1_m = \displaystyle{\frac{V_{mn}}{E^0_n - E^0_m}}\)</p>
+<p>がわかる。<br />
+これは、はじめに状態が \(n\) だったものが摂動を受けて状態\(n\) に遷移する確率振幅を表している。<br />
+摂動項の行列表示をエネルギーの差で割ったものになっていて、大変印象的である。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter_1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter_1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
             </nav>
 
         </div>
