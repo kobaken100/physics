@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 第1章 自由場</a></li><li class="chapter-item expanded "><a href="chapter_a2.html"><strong aria-hidden="true">2.</strong> App2 量子力学での摂動</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 第1章 自由場</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 第2章 Feymanダイアグラム</a></li><li class="chapter-item expanded "><a href="chapter_a2.html"><strong aria-hidden="true">3.</strong> App2 量子力学での摂動</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -259,7 +259,7 @@ Dirac場を説明するために、ガンマ行列というものが必要にな
 　　　　\( = \phi(y)\phi(x)　（x^0 &lt; y^0のとき） \)</p>
 <p>となる。</p>
 <p>\(&lt;0|T\phi(x)\phi(y)|0&gt;\) をスカラー場のFeynmanプロパゲータという。
-Feynmanプロパゲータは、その形から、\(x^0 &gt; y^0\) のときは、\(y\) で発生した粒子が \(x\) で消滅する確率振幅、\(x^0 &lt; y^0\) のときは、\(x\) で発生した粒子が \(y\) で消滅する確率振幅を表すものに見える。ただし、今の段階では「そのように見える」程度だと思う。これを使って実際の計算をし、実験結果と一致する結果を出せることはあとで見る。</p>
+Feynmanプロパゲータは、その形から、\(x^0 &gt; y^0\) のときは、\(y\) に置かれた粒子が \(x\) まで伝搬する確率振幅、\(x^0 &lt; y^0\) のときは、\(x\) に置かれた粒子が \(y\) まで伝搬する確率振幅を表すものに見える。ただし、今の段階では「そのように見える」程度だと思う。これを使って実際の計算をし、実験結果と一致する結果を出せることはあとで見る。</p>
 <p>計算すると個別の \(x , y \) ではなく \(x - y\) に依存することがわかるので、\(D_F(x - y)\) と書く。実際、少々の計算ののち次のように書かれる。</p>
 <p>　　\(D_F(x - y) = \displaystyle{\int} \frac{d^4p}{(2\pi)^4}\frac{i}{p^2 - m^2 + i\epsilon}e^{-ip\cdot(x - y)}\)</p>
 <p>ここで、\(\epsilon\) は「無限に小さい正の数」を意味する。（すなわち、積分計算後、正の方向から 0 に近づけた極限をとる。）</p>
@@ -271,18 +271,34 @@ Feynmanプロパゲータは、その形から、\(x^0 &gt; y^0\) のときは�
 Feynmanプロパゲータは次のようになる。</p>
 <p>　　\(S_F(x - y) = &lt;0|T\psi(x)\bar{\psi}(y)|0&gt;\)<br />
 　　　　　　\( = \displaystyle{\int} \frac{d^4p}{(2\pi)^4}\frac{i(\gamma\cdot p + m)}{p^2 - m^2 + i\epsilon}e^{-ip\cdot(x - y)}\)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第2章-feymanダイアグラム"><a class="header" href="#第2章-feymanダイアグラム">第2章 Feymanダイアグラム</a></h1>
+<h2 id="21-相互作用"><a class="header" href="#21-相互作用">2.1 相互作用</a></h2>
+<p>前章では、相互作用をしない場、すなわち自由場を考えた。しかし、現実の粒子は相互に作用しあっている。場の理論が正しいと考えるなら、相互作用の形を予測して、そのような相互作用を入れたときの確率振幅を計算し、それが実験と合うかを調べることになる。</p>
+<p>相互作用は場の演算子を積分したもので表されると考える。<br />
+たとえば、スカラー場の「4点相互作用」とよばれるものは次のように書かれる。</p>
+<p>　　\(\lambda\displaystyle{\int}d^4x \phi(x)^4\)</p>
+<p>ここで、\(\lambda\) は相互作用の強さを表す定数である。これは「小さい量」と考える。そのため、まず自由場で考え、その補正としてこの相互作用をいれることができるわけである。</p>
+<p>たとえば、前章に従えば、自由スカラー場の場合、\(z\)、\(w\) にあった2つの粒子が、\(x\)、\(y\) まで伝搬する確率振幅は、</p>
+<p>　　\(&lt;0|T\phi(x)\phi(y)\phi(z)\phi(w)|0&gt;\)</p>
+<p>を計算すればよかった。これは簡単に計算できるが、粒子が相互作用せず、すなわち互いに素通りするので、結局「1つの粒子の伝搬」を2つ考えるだけのことになる。</p>
+<p>上記の相互作用が実際に起こった場合の確率振幅は</p>
+<p>　　\(&lt;0|T\phi(x)\phi(y)\phi(z)\phi(w) (\lambda\displaystyle{\int}d^4u \phi(u)^4)|0&gt;\)</p>
+<p>を計算することになる。<br />
+「どうしてそう考えられるのか」にはより詳しい説明がある。しかし、いずれにしても、「そう考えてみて、実験で確かめる」という構図は変わらない。したがって、ここでは、上の形が正しいと仮定して進むことにする。</p>
+<p>前章の自由場の演算子を上の表式に代入し計算すれば、「答」が出るわけである。ただし、実際にはもう少し簡単になる。<br />
+\(\phi(x)\) には無数の運動量の状態が重ね合わさって入っているのだった。しかし、実際に実験を行う際には、入射する粒子の運動量は決められていると考えることができる。また、射出される粒子の運動量も計測し決定することができる。
+そこで、\(\phi\) 立の中で、知りたい場合の運動量の項だけを選り出して計算すれば、その場合の確率振幅が求まるわけである。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="appendix2-量子力学での摂動"><a class="header" href="#appendix2-量子力学での摂動">Appendix2 量子力学での摂動</a></h1>
 <p>波動関数が正確にわかっているハミルトニアン \(H_0\) に摂動 \(V\) が加わったときを考える。すなわち</p>
 <p>　　\(H_0 \phi^0_n = E^0_n \phi^0_n\)</p>
-<p>とし、</p>
+<p>対して、</p>
 <p>　　\((H_0 + V)\phi = E\phi\)</p>
-<p>を考える。<br />
-ここで、</p>
+<p>を考える。</p>
 <p>　　\(\phi = \Sigma c_m\phi^0_m\)</p>
 <p>とおいて、上の式に代入すると、</p>
 <p>　　\(\Sigma c_m(E^0_m + V)\phi^0_m = \Sigma E \phi^0_m\)</p>
 <p>となり、\(\phi^{0*}_k\) を掛けて積分すると次が得られる。</p>
-<p>　　\((E - E^0_k)c_k = \Sigma V_{kl}c_m\)</p>
+<p>　　\((E - E^0_k)c_k = \Sigma V_{km}c_m\)</p>
 <p>ただし、</p>
 <p>　　\(V_{km} = \displaystyle{\int} \phi^{0*}_kV\phi^0_m dq\)</p>
 <p>とした。</p>
@@ -290,13 +306,14 @@ Feynmanプロパゲータは次のようになる。</p>
 　　\(c = c^0 + c^1 + c^2 + \dots , \)</p>
 <p>を</p>
 <p>　　\(c^0_n = 1 , c^0_m = 0 (m ≠ n)\)</p>
-<p>としして順に求めていくと、まず、</p>
+<p>として、\(E^1\) や \(c^1_m\) などを順に求めていくことができる。<br />
+すると、まず、</p>
 <p>　　\(E^1 = V_{nn}\)</p>
 <p>が得られる。
-これを代入して、\(c^1_m\) を求めると</p>
+また、\(c^1_m\) を求めると</p>
 <p>　　\(c^1_m = \displaystyle{\frac{V_{mn}}{E^0_n - E^0_m}}\)</p>
 <p>がわかる。<br />
-これは、はじめに状態が \(n\) だったものが摂動を受けて状態\(n\) に遷移する確率振幅を表している。<br />
+これは、はじめに状態が \(n\) だったものが摂動を受けて状態 \(m\) に遷移する確率振幅を表している。<br />
 摂動項の行列表示をエネルギーの差で割ったものになっていて、大変印象的である。</p>
 
                     </main>
