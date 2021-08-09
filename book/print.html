@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 第1章 自由場</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 第2章 Feymanダイアグラム</a></li><li class="chapter-item expanded "><a href="chapter_a2.html"><strong aria-hidden="true">3.</strong> App2 量子力学での摂動</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 第1章 自由場</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 第2章 Feynmanダイアグラム</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> App1 特殊相対性理論</div></li><li class="chapter-item expanded "><a href="chapter_a2.html"><strong aria-hidden="true">4.</strong> App2 量子力学での摂動</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -271,10 +271,10 @@ Feynmanプロパゲータは、その形から、\(x^0 &gt; y^0\) のときは�
 Feynmanプロパゲータは次のようになる。</p>
 <p>　　\(S_F(x - y) = &lt;0|T\psi(x)\bar{\psi}(y)|0&gt;\)<br />
 　　　　　　\( = \displaystyle{\int} \frac{d^4p}{(2\pi)^4}\frac{i(\gamma\cdot p + m)}{p^2 - m^2 + i\epsilon}e^{-ip\cdot(x - y)}\)</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="第2章-feymanダイアグラム"><a class="header" href="#第2章-feymanダイアグラム">第2章 Feymanダイアグラム</a></h1>
-<h2 id="21-相互作用"><a class="header" href="#21-相互作用">2.1 相互作用</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第2章-feynmanダイアグラム"><a class="header" href="#第2章-feynmanダイアグラム">第2章 Feynmanダイアグラム</a></h1>
+<h2 id="21-スカラー場の相互作用"><a class="header" href="#21-スカラー場の相互作用">2.1 スカラー場の相互作用</a></h2>
 <p>前章では、相互作用をしない場、すなわち自由場を考えた。しかし、現実の粒子は相互に作用しあっている。場の理論が正しいと考えるなら、相互作用の形を予測して、そのような相互作用を入れたときの確率振幅を計算し、それが実験と合うかを調べることになる。</p>
-<p>相互作用は場の演算子を積分したもので表されると考える。<br />
+<p>相互作用は場の演算子の適当な「関数」を積分したもので表されると考える。<br />
 たとえば、スカラー場の「4点相互作用」とよばれるものは次のように書かれる。</p>
 <p>　　\(\lambda\displaystyle{\int}d^4x \phi(x)^4\)</p>
 <p>ここで、\(\lambda\) は相互作用の強さを表す定数である。これは「小さい量」と考える。そのため、まず自由場で考え、その補正としてこの相互作用をいれることができるわけである。</p>
@@ -285,9 +285,21 @@ Feynmanプロパゲータは次のようになる。</p>
 <p>　　\(&lt;0|T\phi(x)\phi(y)\phi(z)\phi(w) (\lambda\displaystyle{\int}d^4u \phi(u)^4)|0&gt;\)</p>
 <p>を計算することになる。<br />
 「どうしてそう考えられるのか」にはより詳しい説明がある。しかし、いずれにしても、「そう考えてみて、実験で確かめる」という構図は変わらない。したがって、ここでは、上の形が正しいと仮定して進むことにする。</p>
-<p>前章の自由場の演算子を上の表式に代入し計算すれば、「答」が出るわけである。ただし、実際にはもう少し簡単になる。<br />
-\(\phi(x)\) には無数の運動量の状態が重ね合わさって入っているのだった。しかし、実際に実験を行う際には、入射する粒子の運動量は決められていると考えることができる。また、射出される粒子の運動量も計測し決定することができる。
-そこで、\(\phi\) 立の中で、知りたい場合の運動量の項だけを選り出して計算すれば、その場合の確率振幅が求まるわけである。</p>
+<p>前章の自由場の演算子を上の表式に代入し計算すれば、「答」が出る。\(\phi\) には、\(a_\mathbf{p}\) たちと、\(a_\mathbf{p}^+\) たちが入っていた。\(a_\mathbf{p}\) パートは右の \(|0&gt;\) に作用するとゼロになり、\(a_\mathbf{p}^+\) パートは左の \(&lt;0|\) に作用する（触れる）とゼロになるのだった。そこで、上の式の中で、\(a_\mathbf{p}\) パートを右の方に、\(a_\mathbf{p}^+\) を左の方に動かしていき、それぞれ \(|0&gt;\)、\(&lt;0|\) に触れさせてゼロにする。ただし、\(a_\mathbf{p}\) と \(a_\mathbf{p}^+\) がすれ違うとき、すなわち交換するときに、交換子ができて、デルタ関数が現れる。</p>
+<p>　　\(a_\mathbf{p} a_{\mathbf{p}'}^+ = a_{\mathbf{p}'}^+ a_\mathbf{p} + [a_\mathbf{p} , a_{\mathbf{p}'}^+] = a_\mathbf{p}^+ a_\mathbf{p} + (2\pi)^3\delta^{(3)}(\mathbf{p} - \mathbf{p}')\) </p>
+<p>これを使って計算すると、</p>
+<p>　　\(&lt;0|T\phi(x)\phi(y)\phi(z)\phi(w) (\lambda\displaystyle{\int}d^4u \phi(u)^4)|0&gt;\)<br />
+　　\(　 = 4!\lambda\displaystyle{\int}d^4uD_F(x-u)D_F(y-u)D_F(z-u)D_F(w-u)\)</p>
+<p>となる。</p>
+<p>これは、たとえば、\(z\)、\(w\) の時刻を \(x\)、\(y\) の時刻より前に取れば、「\(z\)、\(w\) にあった2つの粒子が、\(x\)、\(y\) まで伝搬する確率振幅」と言うべきものである。しかし、\(\phi(x)\) には無数の運動量の状態が重ね合わさって入っているのだった。実際に実験を行う際には、入射する粒子の運動量は決められていると考えることができる。また、射出される粒子の運動量も計測し決定することができる。そこで、\(\phi\) たちの中で、知りたい場合の運動量の項だけを選り出して計算すれば、その場合の確率振幅が求まるわけである。<br />
+そこで「決まった運動量の項」を取り出すために上の式をフーリエ変換する。さらに、\(u\) の積分の際に、公式</p>
+<p>　　\(\displaystyle{\int}dxe^{-ipx} = 2\pi\delta(p)\)</p>
+<p>を使っうと、</p>
+<p>「運動量が \(k_1\)、\(k_2\) の2つの粒子が相互作用し、\(p_1\)、\(p_2\) になる確率振幅」が計算できて、次のようになる。</p>
+<p>　　\(4!\lambda(2\pi)^4\delta^{(4)}(p_1 + p_2 - k_1 - k_2)\)<br />
+　　　　　\(×\displaystyle{\frac{i}{p_1^2 - m^2}\frac{i}{p_2^2 - m^2}\frac{i}{k_1^2 - m^2}\frac{i}{k_2^2 - m^2}}\)</p>
+<p>ただし、普通の教科書では、これに \(-i\) が付けられることが多い。確率を出す際には、\(-i\) はあってもなくても同じだが、以下ではこれに従うことにする。</p>
+<p>実験を何度も繰り返すと、一定の確率で「運動量が \(k_1\)、\(k_2\) の2つの粒子が相互作用し、\(p_1\)、\(p_2\) になる」が実現される。そこでその確率を実測し、計算値と合っているか確かめれば、この理論が正しいかどうかわかることになる。一般に、場の理論で計算した確率は高い精度で正しいことが知られている。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="appendix2-量子力学での摂動"><a class="header" href="#appendix2-量子力学での摂動">Appendix2 量子力学での摂動</a></h1>
 <p>波動関数が正確にわかっているハミルトニアン \(H_0\) に摂動 \(V\) が加わったときを考える。すなわち</p>
 <p>　　\(H_0 \phi^0_n = E^0_n \phi^0_n\)</p>
